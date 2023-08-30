@@ -20,3 +20,7 @@ use the [Compose Multiplatform desktop application template](https://github.com/
 This application is for experimenting with Compose Multiplaform where I will build application on two platforms with single codebase.
 Application is called Travel Log and inside it user will be able to read blogs from other user and their travelling as well as inserting theirs travel information as well.
 User will be able to post a blog only if he logs in.
+
+## Libraries
+Most used library is MOKO which is set of libraries that help and speed up Compose Multiplatform application.
+This is link to their official website were they described every library they have as well as link to tutorials about their implementaion. [MOKO official website.](https://moko.icerock.dev/)
