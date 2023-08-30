@@ -15,3 +15,8 @@ The result will be a [Kotlin Multiplatform](https://kotlinlang.org/docs/multipla
 
 If you want to create an application targeting desktop platforms – Windows, macOS, or Linux –
 use the [Compose Multiplatform desktop application template](https://github.com/JetBrains/compose-multiplatform-desktop-template#readme).
+
+## About application
+This application is for experimenting with Compose Multiplaform where I will build application on two platforms with single codebase.
+Application is called Travel Log and inside it user will be able to read blogs from other user and their travelling as well as inserting theirs travel information as well.
+User will be able to post a blog only if he logs in.
