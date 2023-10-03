@@ -33,6 +33,9 @@ kotlin {
                 api("androidx.activity:activity-compose:1.7.2")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.10.1")
+                implementation("io.insert-koin:koin-core:3.2.0")
+                implementation("io.insert-koin:koin-test:3.2.0")
+
             }
         }
         val iosX64Main by getting
