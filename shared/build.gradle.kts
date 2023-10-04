@@ -29,6 +29,7 @@ kotlin {
                 implementation("io.insert-koin:koin-core:3.5.0")
                 implementation("io.insert-koin:koin-test:3.2.0")
                 api("dev.icerock.moko:mvvm-core:0.16.1")
+                api("dev.icerock.moko:mvvm-compose:0.16.1")
             }
         }
         val androidMain by getting {

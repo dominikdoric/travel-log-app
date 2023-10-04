@@ -12,5 +12,6 @@ class HomeScreenViewModel: ViewModel() {
 
     fun getBlog() {
         viewModelScope.launch {  }
+
     }
 }

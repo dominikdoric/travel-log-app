@@ -3,7 +3,10 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import dev.icerock.moko.mvvm.compose.getViewModel
+import dev.icerock.moko.mvvm.compose.viewModelFactory
 import presentation.screens.homeScreen.HomeScreen
+import presentation.screens.homeScreen.HomeScreenViewModel
 
 @Composable
 fun App() {
@@ -12,7 +15,8 @@ fun App() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            HomeScreen()
+            val homeScreenViewModel = getViewModel(Unit, viewModelFactory { HomeScreenViewModel() })
+            HomeScreen(viewModel = homeScreenViewModel)
         }
     }
 }
