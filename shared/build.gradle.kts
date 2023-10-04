@@ -26,16 +26,17 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
+                implementation("io.insert-koin:koin-core:3.5.0")
+                implementation("io.insert-koin:koin-test:3.2.0")
+                api("dev.icerock.moko:mvvm-core:0.16.1")
             }
         }
         val androidMain by getting {
             dependencies {
                 api("androidx.activity:activity-compose:1.7.2")
                 api("androidx.appcompat:appcompat:1.6.1")
-                api("androidx.core:core-ktx:1.10.1")
-                implementation("io.insert-koin:koin-core:3.2.0")
-                implementation("io.insert-koin:koin-test:3.2.0")
-
+                api("androidx.core:core-ktx:1.12.0")
+                implementation("io.insert-koin:koin-androidx-compose:3.5.0")
             }
         }
         val iosX64Main by getting
