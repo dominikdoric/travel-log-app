@@ -14,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import dev.icerock.moko.mvvm.compose.getViewModel
 import presentation.screens.homeScreen.composables.HomeScreenContent
 
 @Composable
@@ -39,10 +40,7 @@ fun HomeScreen(viewModel: HomeScreenViewModel) {
             }
         },
         content = {
-            HomeScreenContent(
-                viewModel = viewModel,
-                uiState = uiState
-            )
+            HomeScreenContent(uiState = uiState)
         }
     )
 }
