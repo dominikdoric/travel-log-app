@@ -1,5 +1,7 @@
 package domain.model
 
+import data.model.BlogData
+
 data class BlogDomain(
     val id: Int = 0,
     val title: String = "",
@@ -11,3 +13,17 @@ data class BlogDomain(
     val budget: String = "",
     val duration: String = ""
 )
+
+fun BlogData.toBlogDomain(): BlogDomain {
+    return BlogDomain(
+        id = this.id,
+        title = this.title,
+        content = this.content,
+        location = this.location,
+        dateCreated = this.dateCreated,
+        placeToVisit = this.placeToVisit,
+        weather = this.weather,
+        budget = this.budget,
+        duration = this.duration
+    )
+}

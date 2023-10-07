@@ -3,7 +3,7 @@ package alphaServer.server
 import alphaServer.tables.Blog
 
 class TravelLogServerImpl : TravelLogServer {
-    override fun getBlogs(): List<Blog> {
+    override suspend fun getBlogs(): List<Blog> {
         return listOf(
             Blog(
                 id = 1,

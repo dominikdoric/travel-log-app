@@ -1,5 +1,5 @@
 package presentation.screens.homeScreen.state
 
-import alphaServer.tables.Blog
+import presentation.model.BlogUi
 
-data class BlogUiState(val blogs: List<Blog> = emptyList())
+data class BlogUiState(val blogs: List<BlogUi> = emptyList())
