@@ -15,12 +15,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
 import dev.icerock.moko.mvvm.compose.getViewModel
 import presentation.screens.homeScreen.composables.HomeScreenContent
+import presentation.voyager.AddBlogScreen
 
 @Composable
 fun HomeScreen(viewModel: HomeScreenViewModel) {
     val uiState by viewModel.uiState.collectAsState()
+    val navigator = LocalNavigator.currentOrThrow
 
     Scaffold(
         topBar = {
@@ -31,7 +35,7 @@ fun HomeScreen(viewModel: HomeScreenViewModel) {
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = {},
+                onClick = { navigator.push(AddBlogScreen()) },
                 modifier = Modifier.padding(16.dp)
             ) {
                 Icon(

@@ -9,11 +9,7 @@ fun BlogItemsList(blogsList: List<BlogUi>) {
     LazyColumn {
         items(count = blogsList.size) { index ->
             val blog = blogsList[index]
-            BlogItem(
-                title = blog.title,
-                description = blog.location,
-                timestamp = blog.dateCreated
-            )
+            BlogItem(blog = blog)
         }
     }
 }

@@ -11,18 +11,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import cafe.adriel.voyager.navigator.LocalNavigator
+import cafe.adriel.voyager.navigator.currentOrThrow
+import presentation.model.BlogUi
+import presentation.voyager.AddBlogScreen
+import presentation.voyager.BlogDetailScreen
 
 @Composable
-fun BlogItem(
-    title: String,
-    description: String,
-    timestamp: String
-) {
+fun BlogItem(blog: BlogUi) {
+    val navigator = LocalNavigator.currentOrThrow
+
     Card(
         modifier = Modifier
             .fillMaxSize()
             .padding(8.dp)
-            .clickable { },
+            .clickable { navigator.push(BlogDetailScreen(blog = blog)) },
         backgroundColor = Color.Green.copy(alpha = 0.05f),
         shape = RoundedCornerShape(10.dp)
     ) {
@@ -31,9 +34,9 @@ fun BlogItem(
                 .padding(12.dp)
         )
         {
-            Text(title)
-            Text(description)
-            Text(timestamp)
+            Text(blog.title)
+            Text(blog.content)
+            Text(blog.dateCreated)
         }
     }
 }
