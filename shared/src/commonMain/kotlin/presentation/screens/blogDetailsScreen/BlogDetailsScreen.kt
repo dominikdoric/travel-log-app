@@ -14,7 +14,7 @@ fun BlogDetailsScreen(blog: BlogUi) {
         topBar = {
             TopAppBar(
                 title = { Text(blog.title) },
-                backgroundColor = Color.LightGray
+                backgroundColor = Color.Green.copy(alpha = 0.15f)
             )
         },
         content = { BlogDetailsScreenContent(blog = blog) }

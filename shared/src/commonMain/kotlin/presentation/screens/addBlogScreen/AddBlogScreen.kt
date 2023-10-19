@@ -12,8 +12,9 @@ fun AddBlogScreen() {
         topBar = {
             TopAppBar(
                 title = { Text("Add blog") },
-                backgroundColor = Color.LightGray
+                backgroundColor = Color.Green.copy(alpha = 0.15f)
             )
-        }
-    ) { }
+        },
+        content = {}
+    )
 }
