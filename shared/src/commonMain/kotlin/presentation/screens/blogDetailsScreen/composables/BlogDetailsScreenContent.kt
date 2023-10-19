@@ -1,11 +1,13 @@
 package presentation.screens.blogDetailsScreen.composables
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.jetbrains.compose.resources.painterResource
 import presentation.composables.SingleLineText
 import presentation.model.BlogUi
 

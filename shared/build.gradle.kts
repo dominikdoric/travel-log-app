@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("org.jetbrains.compose")
+    id("dev.icerock.mobile.multiplatform-resources")
 }
 
 kotlin {
@@ -15,6 +16,8 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "shared"
             isStatic = true
+            export("dev.icerock.moko:resources:0.23.0")
+            export("dev.icerock.moko:graphics:0.9.0")
         }
     }
 
@@ -33,11 +36,13 @@ kotlin {
                 implementation("cafe.adriel.voyager:voyager-koin:1.0.0-rc07")
                 api("dev.icerock.moko:mvvm-core:0.16.1")
                 api("dev.icerock.moko:mvvm-compose:0.16.1")
+                api("dev.icerock.moko:resources:0.23.0")
             }
         }
         val androidMain by getting {
+            dependsOn(commonMain)
             dependencies {
-                api("androidx.activity:activity-compose:1.7.2")
+                api("androidx.activity:activity-compose:1.8.0")
                 api("androidx.appcompat:appcompat:1.6.1")
                 api("androidx.core:core-ktx:1.12.0")
                 implementation("io.insert-koin:koin-androidx-compose:3.5.0")
@@ -73,4 +78,9 @@ android {
     kotlin {
         jvmToolchain(11)
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "com.myapplication.common"
+    multiplatformResourcesClassName = "SharedRes"
 }
