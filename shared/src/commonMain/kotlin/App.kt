@@ -13,6 +13,7 @@ import domain.repository.BlogsRepository
 import domain.useCases.GetBlogsUseCase
 import presentation.screens.homeScreen.HomeScreen
 import presentation.screens.homeScreen.HomeScreenViewModel
+import presentation.voyager.HomeScreen
 
 @Composable
 fun App() {
@@ -21,19 +22,7 @@ fun App() {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
         ) {
-            val homeScreenViewModel = getViewModel(
-                Unit,
-                viewModelFactory {
-                    HomeScreenViewModel(
-                        getBlogsUseCase = GetBlogsUseCase(
-                            blogsRepository = BlogRepositoryImpl(
-                                remoteDataSource = RemoteDataSourceImpl(travelLogServer = TravelLogServerImpl())
-                            )
-                        )
-                    )
-                }
-            )
-            Navigator(screen = HomeScreen(viewModel = homeScreenViewModel))
+            Navigator(HomeScreen)
         }
     }
 }
