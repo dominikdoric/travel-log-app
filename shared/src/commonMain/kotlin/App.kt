@@ -4,6 +4,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import cafe.adriel.voyager.navigator.Navigator
 import data.remote.RemoteDataSourceImpl
 import data.repository.BlogRepositoryImpl
 import dev.icerock.moko.mvvm.compose.getViewModel
@@ -32,7 +33,7 @@ fun App() {
                     )
                 }
             )
-            HomeScreen(viewModel = homeScreenViewModel)
+            Navigator(screen = HomeScreen(viewModel = homeScreenViewModel))
         }
     }
 }
